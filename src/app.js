@@ -19,9 +19,11 @@ app.use(cookieParser())
 // routes import
 
 import userRouter from './routes/user.routes.js'
+import mailRouter from "./routes/email.routes.js"
 
 //routes declarations
 app.use("/api/v1/users", userRouter)
+app.use("/api/v1/mails",mailRouter )
 
 
 export {app}
