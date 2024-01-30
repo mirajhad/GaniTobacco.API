@@ -21,13 +21,13 @@ const userSchema = new Schema(
     },
     fullName: {
       type: String,
-      required: true,
+      required: false,
       trim: true,
       index: true,
     },
     avatar: {
       type: String, // cloudinary url
-      required: true,
+      required: false,
     },
     coverImage: {
       type: String, // cloudinary url
