@@ -23,7 +23,7 @@ import mailRouter from "./routes/email.routes.js"
 import healthCheck from "./routes/health.routes.js"
 
 //routes declarations
-app.use("/", userRouter)
+app.use("/api/v1/users", userRouter)
 app.use("/api/v1/mails",mailRouter )
 app.use("/",healthCheck)
 
