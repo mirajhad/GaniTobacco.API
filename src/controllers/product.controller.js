@@ -15,7 +15,7 @@ const addProduct = asyncHandler(async (req, res) => {
   }
 
   try {
-    const order = await Order.create({
+    await Order.create({
       name,
       email,
       address,
@@ -30,8 +30,8 @@ const addProduct = asyncHandler(async (req, res) => {
       body: `Thank you ${name} for your purchase! Your order will be delivered to ${address}.
       Details:
       Phone: ${phone},
-      Quantity: ${quantity},
-      Price: ${price}
+      Quantity: ${quantity}gram,
+      Price: Rs:${price}
       `,
       from: process.env.TWILIO_PHONE_NUMBER,
       to: `+91${phone}`,
