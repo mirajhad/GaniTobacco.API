@@ -29,6 +29,7 @@ app.use("/api/v1/users", userRouter)
 app.use("/api/v1/mails",mailRouter )
 app.use("/",healthCheck)
 app.use("/api/v1/products", addProduct)
+app.get('/favicon.ico', (req, res) => res.status(204));
 
 
 
