@@ -23,9 +23,8 @@ const addProduct = asyncHandler(async (req, res) => {
       quantity,
       price,
     });
-    const accountSid = process.env.TWILIO_ACCOUNT_SID;
-    const authToken = process.env.TWILIO_AUTH_TOKEN;
-    const clientData = client(accountSid, authToken);
+   
+    const clientData = client(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
     clientData.messages.create({
       body: `Thank you ${name} for your purchase! Your order will be delivered to ${address}.
       Details:
