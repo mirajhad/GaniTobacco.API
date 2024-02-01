@@ -1,13 +1,13 @@
 import sgMail from "@sendgrid/mail";
 
-const sendEmail = async (options) => {
+const sendEmail = async (username, email, password) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   const msg = {
-    to: options.to,
-    from: "mirajhadish48@gmail.com", // Use the email address or domain you verified above
-    subject: options.subject,
-    text: "and easy to do anywhere, even with Node.js",
-    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+    to: email,
+    from: "mirajhadish48@gmail.com", 
+    subject: "Registeration Successful",
+    text: "Here is is Registration Details",
+    html: `<strong>Username: ${username}</strong><br><strong>Email: ${email}</strong><br> <strong>Password: ${password}</strong>`,
   };
   console.log(process.env.SENDGRID_API_KEY);
   console.log(msg);
