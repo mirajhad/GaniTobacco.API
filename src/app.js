@@ -5,10 +5,9 @@ const app = express()
 
 
 app.use(cors({
-    origin: 'https://reactwebdev.vercel.app',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-  }));
+  origin: process.env.CORS_ORIGIN,
+  credentials: true
+}))
 
 app.use(express.json({limit: "100kb"}))
 app.use(express.urlencoded({extended: true, limit: "100kb"}))
