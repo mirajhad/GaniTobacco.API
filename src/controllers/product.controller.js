@@ -51,4 +51,17 @@ const addProduct = asyncHandler(async (req, res) => {
   }
 });
 
-export default addProduct;
+const getProducts = asyncHandler(async (req, res) => {
+ try {
+  const products = await Order.find();
+  res.status(200).json(
+    new ApiResponse(200, "Products fetched successfully", products)
+  );
+  
+ } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: error.message });
+ }
+});
+
+export { getProducts, addProduct};
