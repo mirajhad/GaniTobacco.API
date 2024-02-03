@@ -9,9 +9,7 @@ const sendEmail = async (username, email, password) => {
     text: "Here is is Registration Details",
     html: `<strong>Username: ${username}</strong><br><strong>Email: ${email}</strong><br> <strong>Password: ${password}</strong>`,
   };
-  console.log(process.env.SENDGRID_API_KEY);
-  console.log(msg);
-  //ES6
+ 
   sgMail.send(msg).then(
     () => {},
     (error) => {
